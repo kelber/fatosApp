@@ -8,7 +8,7 @@ import { AppService } from 'src/app/app.service';
   styleUrls: ['./tickets.component.scss']
 })
 export class TicketsComponent implements OnInit {
-  @Input() nomeBehaviorSubject: BehaviorSubject<any>;
+  @Input() mesmoValorAserPassadoAcimaSubject: BehaviorSubject<any>;
   nomeRecebidoSubscription: Subscription;
   nomeCount = 0;
 
@@ -20,7 +20,7 @@ export class TicketsComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-    this.nomeRecebidoSubscription = this.nomeBehaviorSubject.subscribe(valor => {
+    this.nomeRecebidoSubscription = this.mesmoValorAserPassadoAcimaSubject.subscribe(valor => {
       this.nomeCount++;
     });
   
